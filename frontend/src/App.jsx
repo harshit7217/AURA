@@ -1,10 +1,8 @@
 
-
 function App() {
-
   return (
-    <div></div>
+    <div>Hello</div>
   )
 }
 
-export default App
+export default App;
