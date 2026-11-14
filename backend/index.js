@@ -1,4 +1,5 @@
-﻿import express from 'express';
+﻿import 'dotenv/config';
+import express from 'express';
 import cors from 'cors';
 import connectDB from './config/database.js';
 import juniorCandidateRoute from "./routes/juniorCandidteRoute.js"
