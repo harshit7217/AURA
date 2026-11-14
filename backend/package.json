@@ -12,11 +12,16 @@
     "dev": "node index.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
     "dotenv": "^18.0.10",
     "ejs": "^7.0.2",
     "express": "^5.3.0",
     "mongoose": "^9.12.1"
+=======
+    "cors": "^2.8.6",
+    "express": "^5.3.0"
+>>>>>>> 471e47bf24da4b1d6cc34243f6f9edd890e29064
   }
 }
