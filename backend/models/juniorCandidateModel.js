@@ -23,10 +23,9 @@ const juniorCandiateSchema = new Schema({
     }
 }, { timestamps: true});
 
-juniorCandiateSchema.pre("save", async function(next) {
-    if(!this.isModified("password")) return next();
+juniorCandiateSchema.pre("save", async function() {
+    if(!this.isModified("password")) return;
     this.password = await bcrypt.hash(this.password, 10);
-    next();
 })
 
 juniorCandiateSchema.methods.comparePassword = function (plainPassword) {

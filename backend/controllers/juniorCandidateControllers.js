@@ -1,4 +1,3 @@
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import juniorCandidateModel from "../models/juniorCandidateModel.js";
 
@@ -26,10 +25,7 @@ export const registerJuniorCandidate = async (req, res) => {
             return res.status(400).json({message: "Password must be at least 6 characters"});
         }
 
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
-
-        const candidate = await juniorCandidateModel.create({name, email, password: hashedPassword});
+        const candidate = await juniorCandidateModel.create({name, email, password});
         const token = signToken(candidate._id);
 
         return res.status(201).json({message: "Registered successfully", candidate: {
