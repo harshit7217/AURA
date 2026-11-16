@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { apiRequest } from "../../services/api.js";
 
 const initialForm = { name: "", email: "", password: "" };
 
@@ -39,9 +40,8 @@ const Register = ({ setIsRegisterPage }) => {
         setLoading(true);
         setStatus(null);
         try {
-            const res = await fetch("/api/junior-candidates/register", {
+            const data = await apiRequest("/api/junior-candidates/register", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     name: form.name.trim(),
                     email: form.email.trim(),
@@ -49,12 +49,10 @@ const Register = ({ setIsRegisterPage }) => {
                 })
             });
 
-            const data = await res.json().catch(() => ({}));
-            if (!res.ok) throw new Error(data.message || "Registration falied");
-
             setStatus({ type: "success", message: data.message || "Candidate registered successfully!" });
 
             setForm(initialForm);
+            setIsRegisterPage(false);
         } catch (err) {
             setStatus({ type: "error", message: err.message });
         } finally {

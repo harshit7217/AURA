@@ -16,11 +16,19 @@ npm install
 
 ## Development
 
+Set the backend URL in `.env.local` in the frontend directory (optional; defaults to `http://localhost:5000`):
+
+```env
+VITE_API_BASE_URL=http://localhost:5000
+```
+
+Start the backend separately, then run:
+
 ```powershell
 npm run dev
 ```
 
-The Vite development server proxies `/api` requests to `http://localhost:5000`. Start the backend separately for API requests.
+The frontend connects directly to the backend using the shared `src/services/api.js` helper. Restart the Vite server after changing the environment variable.
 
 ## Available scripts
 
@@ -34,5 +42,5 @@ The Vite development server proxies `/api` requests to `http://localhost:5000`. 
 ## Current implementation
 
 - The application renders the authentication page at `/`.
-- The Login and Register forms validate input and submit to the backend through the Vite `/api` proxy.
+- The Login and Register forms validate input and submit to the backend through the shared API helper.
 - The current UI shows success and error messages after submission, but it does not yet route a user into a protected dashboard.

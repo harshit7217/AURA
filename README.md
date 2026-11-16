@@ -50,8 +50,8 @@ npm install
 npm run dev
 ```
 
-The Vite development server proxies `/api` requests to `http://localhost:5000`.
+The frontend connects directly to the backend at `http://localhost:5000` by default. To use a different backend URL, set `VITE_API_BASE_URL` in `frontend/.env.local`; see the [frontend guide](./frontend/README.md).
 
 ## Current status
 
-The frontend renders a working Login/Register experience for junior candidates. The forms validate input, submit requests to the backend through the Vite proxy, and show success/error feedback. The backend exposes junior-candidate registration, login, and a JWT-protected `/me` route under `/api/junior-candidates`; see the [backend API guide](./backend/README.md).
+The frontend renders a working Login/Register experience for junior candidates. The forms validate input, submit requests to the backend through the shared API helper, and show success/error feedback. Set `VITE_API_BASE_URL` in `frontend/.env.local` to override the backend URL (defaults to `http://localhost:5000`). The backend exposes junior-candidate registration, login, and a JWT-protected `/me` route under `/api/junior-candidates`; see the [backend API guide](./backend/README.md).

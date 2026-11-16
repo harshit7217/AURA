@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { apiRequest } from "../../services/api.js";
 
 const initialForm = { email: "", password: "" };
 
@@ -12,6 +14,7 @@ const validate = ({ email, password }) => {
 };
 
 const Login = ({ setIsRegisterPage }) => {
+    const navigate = useNavigate();
     const [form, setForm] = useState(initialForm);
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
@@ -36,17 +39,13 @@ const Login = ({ setIsRegisterPage }) => {
         setLoading(true);
         setStatus(null);
         try {
-            const res = await fetch("/api/junior-candidates/login", {
+            const data = await apiRequest("/api/junior-candidates/login", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     email: form.email.trim(),
                     password: form.password,
                 }),
             });
-
-            const data = await res.json().catch(() => ({}));
-            if (!res.ok) throw new Error(data.message || "Login failed");
 
             // Store the token if your API returns one
             if (data.token) localStorage.setItem("token", data.token);
@@ -55,6 +54,7 @@ const Login = ({ setIsRegisterPage }) => {
             setForm(initialForm);
 
             // e.g. navigate("/dashboard") with react-router's useNavigate
+            navigate("/junior-assessment");
         } catch (err) {
             setStatus({ type: "error", message: err.message });
         } finally {

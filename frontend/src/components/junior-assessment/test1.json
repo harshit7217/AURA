@@ -1,0 +1,281 @@
+
+{
+  "assessment_title": "Aura Academy - Junior Batch Assessment",
+  "total_questions": 30,
+  "total_marks": 30,
+  "duration_minutes": 30,
+  "instructions": "Choose the correct answer for each question. Each question carries 1 mark.",
+  "sections": [
+    {
+      "section_name": "Articles",
+      "questions": [
+        {
+          "id": 1,
+          "question": "I saw ___ elephant at the zoo.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "an",
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "question": "Riya has ___ beautiful doll.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "a",
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "question": "Please give me ___ apple.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "an",
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "question": "___ sun rises in the east.",
+          "options": ["A", "An", "The", "No article"],
+          "answer": "The",
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "question": "My father is ___ doctor.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "a",
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "question": "I have ___ umbrella in my bag.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "an",
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "question": "She saw ___ dog in the park. ___ dog was very cute.",
+          "options": ["a, a", "an, the", "a, the", "the, a"],
+          "answer": "a, the",
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "question": "He is ___ honest boy.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "an",
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "question": "We visited ___ Red Fort last Sunday.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "the",
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "question": "I want to buy ___ new pencil.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "a",
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "question": "She is reading ___ interesting book.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "an",
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "question": "Can you pass me ___ salt, please?",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "the",
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "question": "My brother wants to be ___ engineer.",
+          "options": ["a", "an", "the", "no article"],
+          "answer": "an",
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "question": "___ moon looks beautiful tonight.",
+          "options": ["A", "An", "The", "No article"],
+          "answer": "The",
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "question": "We saw ___ old man sitting under ___ tree.",
+          "options": ["a, an", "an, a", "the, an", "an, the"],
+          "answer": "an, a",
+          "marks": 1
+        }
+      ]
+    },
+    {
+      "section_name": "Identify Nouns and Pronouns",
+      "questions": [
+        {
+          "id": 16,
+          "question": "Rohan is playing with his ball. Which word is a noun?",
+          "options": ["his", "is", "Rohan", "with"],
+          "answer": "Rohan",
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "question": "She has a red bag. Which word is a pronoun?",
+          "options": ["red", "bag", "has", "She"],
+          "answer": "She",
+          "marks": 1
+        },
+        {
+          "id": 18,
+          "question": "The children are eating their lunch. Which word is a noun?",
+          "options": ["their", "children", "are", "eating"],
+          "answer": "children",
+          "marks": 1
+        },
+        {
+          "id": 19,
+          "question": "I like my new bicycle. Which word is a pronoun?",
+          "options": ["bicycle", "new", "I", "like"],
+          "answer": "I",
+          "marks": 1
+        },
+        {
+          "id": 20,
+          "question": "Meena gave Rahul a book. He thanked her. Which word is a pronoun?",
+          "options": ["Meena", "Rahul", "book", "He"],
+          "answer": "He",
+          "marks": 1
+        },
+        {
+          "id": 21,
+          "question": "The teacher asked us to open our books. Which pair contains pronouns?",
+          "options": ["teacher, books", "us, our", "asked, open", "the, to"],
+          "answer": "us, our",
+          "marks": 1
+        },
+        {
+          "id": 22,
+          "question": "Aarav and his sister went to the market. Which pair contains a noun and a pronoun?",
+          "options": ["Aarav, his", "and, his", "went, market", "the, market"],
+          "answer": "Aarav, his",
+          "marks": 1
+        }
+      ]
+    },
+    {
+      "section_name": "Situation-Based Questions - At the Market",
+      "questions": [
+        {
+          "id": 23,
+          "question": "You want to buy a packet of biscuits. What would you say to the shopkeeper?",
+          "options": [
+            "Give biscuits!",
+            "Give me a packet of biscuits, please.",
+            "I want biscuits now!",
+            "Biscuits where?"
+          ],
+          "answer": "Give me a packet of biscuits, please.",
+          "marks": 1
+        },
+        {
+          "id": 24,
+          "question": "You cannot find the apples. What should you ask?",
+          "options": [
+            "Where apples?",
+            "Where are the apples, please?",
+            "Give me apples.",
+            "Apples are there?"
+          ],
+          "answer": "Where are the apples, please?",
+          "marks": 1
+        },
+        {
+          "id": 25,
+          "question": "You want to know the price of a toy. What would you say?",
+          "options": [
+            "How much is this toy?",
+            "How toy?",
+            "Give toy price.",
+            "Toy is how?"
+          ],
+          "answer": "How much is this toy?",
+          "marks": 1
+        },
+        {
+          "id": 26,
+          "question": "The shopkeeper tells you that the toy costs Rs. 500, but you think it is expensive. What could you politely say?",
+          "options": [
+            "Too expensive!",
+            "Give it cheaper.",
+            "Could you please give me a better price?",
+            "I don't want this."
+          ],
+          "answer": "Could you please give me a better price?",
+          "marks": 1
+        },
+        {
+          "id": 27,
+          "question": "You accidentally drop something in the shop. What should you say?",
+          "options": [
+            "Sorry, I'll pick it up.",
+            "You pick it up.",
+            "Never mind.",
+            "Give it to me."
+          ],
+          "answer": "Sorry, I'll pick it up.",
+          "marks": 1
+        },
+        {
+          "id": 28,
+          "question": "You want to buy a red T-shirt, but the shopkeeper shows you a blue one. What should you say?",
+          "options": [
+            "No blue!",
+            "I don't want this.",
+            "Do you have this T-shirt in red, please?",
+            "Red give me."
+          ],
+          "answer": "Do you have this T-shirt in red, please?",
+          "marks": 1
+        },
+        {
+          "id": 29,
+          "question": "You have finished shopping. What is the most polite thing to say?",
+          "options": [
+            "Okay, go.",
+            "Give bill.",
+            "Thank you. Have a nice day!",
+            "Finished."
+          ],
+          "answer": "Thank you. Have a nice day!",
+          "marks": 1
+        },
+        {
+          "id": 30,
+          "question": "The shopkeeper gives you Rs. 50 extra by mistake. What should you do?",
+          "options": [
+            "Keep the money.",
+            "Say nothing.",
+            "Give the extra money back and tell the shopkeeper.",
+            "Spend it quickly."
+          ],
+          "answer": "Give the extra money back and tell the shopkeeper.",
+          "marks": 1
+        }
+      ]
+    }
+  ],
+  "grading": {
+    "total_marks": 30,
+    "correct_answer_marks": 1,
+    "incorrect_answer_marks": 0,
+    "unanswered_marks": 0
+  }
+}
