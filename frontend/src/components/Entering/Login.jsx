@@ -36,7 +36,7 @@ const Login = ({ setIsRegisterPage }) => {
         setLoading(true);
         setStatus(null);
         try {
-            const res = await fetch("http://localhost:5000/api/junior-candidates/login", {
+            const res = await fetch("/api/junior-candidates/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

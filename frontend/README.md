@@ -34,5 +34,5 @@ The Vite development server proxies `/api` requests to `http://localhost:5000`. 
 ## Current implementation
 
 - The application renders the authentication page at `/`.
-- The Login and Register components are placeholders; authentication requests are not implemented yet.
-- The Vite `/api` proxy is configured for the backend, but the current frontend does not call it.
+- The Login and Register forms validate input and submit to the backend through the Vite `/api` proxy.
+- The current UI shows success and error messages after submission, but it does not yet route a user into a protected dashboard.

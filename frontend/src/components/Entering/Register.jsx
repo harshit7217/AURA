@@ -14,7 +14,7 @@ const validate = ({ name, email, password }) => {
     return errors;
 }
 
-const Register = ({setIsRegisterPage}) => {
+const Register = ({ setIsRegisterPage }) => {
     const [form, setForm] = useState(initialForm);
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
@@ -33,13 +33,13 @@ const Register = ({setIsRegisterPage}) => {
         const validationErrors = validate(form);
         if (Object.keys(validationErrors).length) {
             setErrors(validationErrors);
-            reeturn;
+            return;
         }
 
         setLoading(true);
         setStatus(null);
         try {
-            const res = await fetch("http://localhost:5000/api/junior-candidates/register", {
+            const res = await fetch("/api/junior-candidates/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

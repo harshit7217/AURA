@@ -54,4 +54,4 @@ The Vite development server proxies `/api` requests to `http://localhost:5000`.
 
 ## Current status
 
-The frontend currently renders a Login/Register page, but those components are placeholders and do not yet send authentication requests. The backend exposes junior-candidate registration, login, and a JWT-protected `/me` route under `/api/junior-candidates`; see the [backend API guide](./backend/README.md).
+The frontend renders a working Login/Register experience for junior candidates. The forms validate input, submit requests to the backend through the Vite proxy, and show success/error feedback. The backend exposes junior-candidate registration, login, and a JWT-protected `/me` route under `/api/junior-candidates`; see the [backend API guide](./backend/README.md).
