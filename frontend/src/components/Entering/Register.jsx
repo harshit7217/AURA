@@ -14,7 +14,7 @@ const validate = ({ name, email, password }) => {
     return errors;
 }
 
-const Register = () => {
+const Register = ({setIsRegisterPage}) => {
     const [form, setForm] = useState(initialForm);
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
@@ -156,6 +156,12 @@ const Register = () => {
                         {loading ? "Registering..." : "Register"}
                     </button>
                 </form>
+                <p className="mt-6 text-center text-sm text-gray-500">
+                    Already have an account?{" "}
+                    <button className="font-medium text-indigo-600 hover:text-indigo-800 cursor-pointer" onClick={() => setIsRegisterPage(false)}>
+                        Login
+                    </button>
+                </p>
             </div>
         </div>
     )
