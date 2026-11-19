@@ -44,3 +44,4 @@ The frontend connects directly to the backend using the shared `src/services/api
 - The application renders the authentication page at `/`; successful login opens `/junior-dashboard`.
 - The protected dashboard loads saved assessment attempts from the backend and charts score history and section marks.
 - Candidates can take the protected MCQ assessment at `/junior-assessment`; results are scored by the backend and persisted to MongoDB.
+- New candidate registrations remain pending until an administrator approves them from the email review link. Rejected candidates can submit a new request using the same email.

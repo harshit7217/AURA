@@ -49,10 +49,9 @@ const Register = ({ setIsRegisterPage }) => {
                 })
             });
 
-            setStatus({ type: "success", message: data.message || "Candidate registered successfully!" });
+            setStatus({ type: "success", message: data.message || "Your registration request has been sent for approval." });
 
             setForm(initialForm);
-            setIsRegisterPage(false);
         } catch (err) {
             setStatus({ type: "error", message: err.message });
         } finally {

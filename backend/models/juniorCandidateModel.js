@@ -75,6 +75,19 @@ const juniorCandiateSchema = new Schema({
         required: true,
         minlength: 6,
     },
+    approvalStatus: {
+        type: String,
+        enum: ["pending", "approved", "rejected"],
+        default: "approved",
+    },
+    approvalTokenHash: {
+        type: String,
+        select: false,
+    },
+    approvalTokenExpiresAt: {
+        type: Date,
+        select: false,
+    },
     assessmentAttempts: {
         type: [assessmentAttemptSchema],
         default: [],

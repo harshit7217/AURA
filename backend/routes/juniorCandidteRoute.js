@@ -6,6 +6,7 @@ import {
     getJuniorAssessment,
     getAssessmentResults,
     submitAssessmentResult,
+    reviewRegistrationRequest,
 } from "../controllers/juniorCandidateControllers.js";
 import { protect } from "../middleware/juniorCandidateMiddleware.js"
 
@@ -13,6 +14,7 @@ const router = Router();
 
 router.post("/register", registerJuniorCandidate);
 router.post("/login", loginJuniorCandidateController);
+router.post("/registration-approval", reviewRegistrationRequest);
 router.get("/me", protect, getMe);
 router.get("/assessment", protect, getJuniorAssessment);
 router.get("/assessment-results", protect, getAssessmentResults);
