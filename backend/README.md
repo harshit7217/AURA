@@ -1,6 +1,6 @@
 # AURA Backend
 
-The backend is an Express API backed by MongoDB and Mongoose. It provides junior-candidate registration and login, with JWT middleware for protected routes. CORS and JSON request parsing are enabled in the server.
+The backend is an Express API backed by MongoDB and Mongoose. It provides junior-candidate registration and login, with JWT middleware for protected routes. It serves the junior MCQ assessment, scores submissions on the server, and stores each candidate's question-level marks and attempt history. CORS and JSON request parsing are enabled in the server.
 
 ## Requirements
 
@@ -49,6 +49,9 @@ All routes use the `/api/junior-candidates` prefix and accept JSON.
 | `POST` | `/register` | Register with `name`, `email`, and `password`. Passwords must be at least six characters. |
 | `POST` | `/login` | Log in with `email` and `password`. A successful response includes a JWT and candidate details. |
 | `GET` | `/me` | Protected route; send the token in `Authorization: Bearer <token>`. |
+| `GET` | `/assessment` | Protected route; returns assessment questions without answer keys. |
+| `POST` | `/assessment-results` | Protected route; submits `{ "answers": { "<questionId>": "<selected option>" } }`. The server calculates marks and stores one result for every MCQ. |
+| `GET` | `/assessment-results` | Protected route; returns the signed-in candidate's saved attempts for the dashboard. |
 
 Registration returns the new candidate's `id`, `name`, and `email`. It does not currently return a JWT; log in after registering to obtain one.
 

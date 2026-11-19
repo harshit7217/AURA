@@ -3,6 +3,60 @@ import bcrypt from "bcryptjs";
 
 const { Schema } = mongoose;
 
+const questionResultSchema = new Schema({
+    questionId: {
+        type: Number,
+        required: true,
+    },
+    section: {
+        type: String,
+        required: true,
+    },
+    selectedAnswer: {
+        type: String,
+        default: null,
+    },
+    marksAwarded: {
+        type: Number,
+        required: true,
+    },
+    maxMarks: {
+        type: Number,
+        required: true,
+    },
+}, { _id: false });
+
+const assessmentAttemptSchema = new Schema({
+    assessmentId: {
+        type: String,
+        required: true,
+    },
+    assessmentTitle: {
+        type: String,
+        required: true,
+    },
+    score: {
+        type: Number,
+        required: true,
+    },
+    totalMarks: {
+        type: Number,
+        required: true,
+    },
+    attempted: {
+        type: Number,
+        required: true,
+    },
+    questionResults: {
+        type: [questionResultSchema],
+        required: true,
+    },
+    submittedAt: {
+        type: Date,
+        default: Date.now,
+    },
+});
+
 const juniorCandiateSchema = new Schema({
     name: {
         type: String,
@@ -20,7 +74,11 @@ const juniorCandiateSchema = new Schema({
         type: String,
         required: true,
         minlength: 6,
-    }
+    },
+    assessmentAttempts: {
+        type: [assessmentAttemptSchema],
+        default: [],
+    },
 }, { timestamps: true});
 
 juniorCandiateSchema.pre("save", async function() {

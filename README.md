@@ -54,4 +54,4 @@ The frontend connects directly to the backend at `http://localhost:5000` by defa
 
 ## Current status
 
-The frontend renders a working Login/Register experience for junior candidates. The forms validate input, submit requests to the backend through the shared API helper, and show success/error feedback. Set `VITE_API_BASE_URL` in `frontend/.env.local` to override the backend URL (defaults to `http://localhost:5000`). The backend exposes junior-candidate registration, login, and a JWT-protected `/me` route under `/api/junior-candidates`; see the [backend API guide](./backend/README.md).
+The frontend renders Login/Register and a JWT-protected junior-candidate dashboard. Candidates can complete an MCQ assessment; the backend calculates and stores question-level marks and attempt history in MongoDB, and the dashboard loads those results into score and section charts. Set `VITE_API_BASE_URL` in `frontend/.env.local` to override the backend URL (defaults to `http://localhost:5000`). See the [backend API guide](./backend/README.md).
