@@ -6,7 +6,6 @@ const router = Router();
 
 router.post("/register", registerJuniorCandidate);
 router.post("/login", loginJuniorCandidateController);
-router.post("/registration-approval", reviewRegistrationRequest);
 router.get("/me", protect, getMe);
 
 export default router;
