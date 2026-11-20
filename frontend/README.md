@@ -16,7 +16,7 @@ npm install
 
 ## Development
 
-Set the backend URL in `.env` or `.env.local` in the frontend directory (optional; defaults to `http://localhost:5000`):
+Set the backend URL in `.env.local` in the frontend directory (optional; defaults to `http://localhost:5000`):
 
 ```env
 VITE_API_BASE_URL=http://localhost:5000
@@ -41,7 +41,6 @@ The frontend connects directly to the backend using the shared `src/services/api
 
 ## Current implementation
 
-- The application renders the authentication page at `/`; successful login opens `/junior-dashboard`.
-- The protected dashboard loads saved assessment attempts from the backend and charts score history and section marks.
-- Candidates can take the protected MCQ assessment at `/junior-assessment`; results are scored by the backend and persisted to MongoDB.
-- New candidate registrations remain pending until an administrator approves them from the email review link. Rejected candidates can submit a new request using the same email.
+- The application renders the authentication page at `/`.
+- The Login and Register forms validate input and submit to the backend through the shared API helper.
+- The current UI shows success and error messages after submission, but it does not yet route a user into a protected dashboard.

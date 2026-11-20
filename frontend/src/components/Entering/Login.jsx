@@ -47,12 +47,14 @@ const Login = ({ setIsRegisterPage }) => {
                 }),
             });
 
+            // Store the token if your API returns one
             if (data.token) localStorage.setItem("token", data.token);
 
             setStatus({ type: "success", message: data.message || "Logged in successfully!" });
             setForm(initialForm);
 
-            navigate("/junior-dashboard");
+            // e.g. navigate("/dashboard") with react-router's useNavigate
+            navigate("/junior-assessment");
         } catch (err) {
             setStatus({ type: "error", message: err.message });
         } finally {

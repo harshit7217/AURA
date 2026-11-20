@@ -1,6 +1,6 @@
 # AURA Backend
 
-The backend is an Express API backed by MongoDB and Mongoose. It provides junior-candidate registration and login, with JWT middleware for protected routes. It serves the junior MCQ assessment, scores submissions on the server, and stores each candidate's question-level marks and attempt history. CORS and JSON request parsing are enabled in the server.
+The backend is an Express API backed by MongoDB and Mongoose. It provides junior-candidate registration and login, with JWT middleware for protected routes. CORS and JSON request parsing are enabled in the server.
 
 ## Requirements
 
@@ -57,9 +57,6 @@ All routes use the `/api/junior-candidates` prefix and accept JSON.
 | `POST` | `/login` | Log in with `email` and `password`. Only approved candidates receive a JWT. |
 | `POST` | `/registration-approval` | Review a request with `{ "token": "<email token>", "decision": "approve" \| "reject" }`. The link is one-time and expires after 48 hours. |
 | `GET` | `/me` | Protected route; send the token in `Authorization: Bearer <token>`. |
-| `GET` | `/assessment` | Protected route; returns assessment questions without answer keys. |
-| `POST` | `/assessment-results` | Protected route; submits `{ "answers": { "<questionId>": "<selected option>" } }`. The server calculates marks and stores one result for every MCQ. |
-| `GET` | `/assessment-results` | Protected route; returns the signed-in candidate's saved attempts for the dashboard. |
 
 Registration emails a review link to the approval inbox. The email link opens a confirmation page where the reviewer chooses Approve or Reject. Approved candidates can log in; rejected candidates can submit a new request using the same email address. If SMTP delivery fails, the request remains pending and submitting the form again sends a fresh review link.
 

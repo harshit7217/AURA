@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import { apiRequest } from "../../services/api.js";
+import assessment from "./../junior-assessment/test1.json"; // save your JSON next to this file
 
 const formatTime = (secs) => {
     const m = String(Math.floor(secs / 60)).padStart(2, "0");
@@ -9,73 +8,41 @@ const formatTime = (secs) => {
 };
 
 const Assessment = () => {
-    const navigate = useNavigate();
-    const [assessment, setAssessment] = useState(null);
-    const [loadError, setLoadError] = useState("");
-    const [submitting, setSubmitting] = useState(false);
-    const [submitError, setSubmitError] = useState("");
+    // Flatten sections into one list, keeping the section name on each question
     const questions = useMemo(
-        () => assessment
-            ?
+        () =>
             assessment.sections.flatMap((section) =>
                 section.questions.map((q) => ({ ...q, section: section.section_name }))
-            )
-            : [],
-        [assessment]
+            ),
+        []
     );
 
     const [started, setStarted] = useState(false);
     const [current, setCurrent] = useState(0);
     const [answers, setAnswers] = useState({}); // { [questionId]: selectedOption }
-    const [timeLeft, setTimeLeft] = useState(0);
+    const [timeLeft, setTimeLeft] = useState(assessment.duration_minutes * 60);
     const [result, setResult] = useState(null);
 
-    useEffect(() => {
-        let active = true;
-        apiRequest("/api/junior-candidates/assessment")
-            .then((data) => {
-                if (!active) return;
-                setAssessment(data.assessment);
-                setTimeLeft(data.assessment.duration_minutes * 60);
-            })
-            .catch((error) => {
-                if (active) setLoadError(error.message);
-            });
-        return () => {
-            active = false;
-        };
-    }, []);
-
-    const submit = useCallback(async () => {
-        if (submitting) return;
-        setSubmitting(true);
-        setSubmitError("");
-        try {
-            const data = await apiRequest("/api/junior-candidates/assessment-results", {
-                method: "POST",
-                body: JSON.stringify({ answers }),
-            });
-            setResult(data.attempt);
-        } catch (error) {
-            setSubmitError(error.message);
-        } finally {
-            setSubmitting(false);
-        }
-    }, [answers, submitting]);
+    const submit = useCallback(() => {
+        const score = questions.reduce(
+            (total, q) => total + (answers[q.id] === q.answer ? q.marks : 0),
+            0
+        );
+        setResult({ score, attempted: Object.keys(answers).length });
+        // TODO: send to backend, e.g.
+        // fetch("http://localhost:5000/api/junior-candidates/assessment", { method: "POST", ... })
+    }, [answers, questions]);
 
     // Countdown timer, auto-submits at zero
     useEffect(() => {
-        if (!started || result || submitting || submitError) return;
-        const id = setTimeout(() => {
-            if (timeLeft <= 1) {
-                setTimeLeft(0);
-                submit();
-            } else {
-                setTimeLeft((time) => time - 1);
-            }
-        }, 1000);
+        if (!started || result) return;
+        if (timeLeft <= 0) {
+            submit();
+            return;
+        }
+        const id = setTimeout(() => setTimeLeft((t) => t - 1), 1000);
         return () => clearTimeout(id);
-    }, [started, result, timeLeft, submit, submitting, submitError]);
+    }, [started, result, timeLeft, submit]);
 
     const handleSubmitClick = () => {
         const unanswered = questions.length - Object.keys(answers).length;
@@ -87,23 +54,6 @@ const Assessment = () => {
 
     const card = "w-full max-w-2xl rounded-2xl bg-white p-8 shadow-lg";
     const wrapper = "flex min-h-screen items-center justify-center bg-gray-100 px-4 py-8";
-
-    if (loadError) {
-        return (
-            <div className={wrapper}>
-                <div className={card}>
-                    <p role="alert" className="text-sm text-red-600">{loadError}</p>
-                    <button onClick={() => navigate("/junior-dashboard")} className="mt-5 text-sm font-semibold text-indigo-600">
-                        Return to dashboard
-                    </button>
-                </div>
-            </div>
-        );
-    }
-
-    if (!assessment) {
-        return <div className={wrapper}><p className="text-sm text-gray-500">Loading assessment...</p></div>;
-    }
 
     // ---------- Start screen ----------
     if (!started) {
@@ -139,24 +89,18 @@ const Assessment = () => {
 
     // ---------- Result screen ----------
     if (result) {
-        const percent = Math.round((result.score / result.totalMarks) * 100);
+        const percent = Math.round((result.score / assessment.total_marks) * 100);
         return (
             <div className={wrapper}>
                 <div className={`${card} text-center`}>
                     <h1 className="text-2xl font-bold text-gray-800">Test Submitted</h1>
                     <p className="mt-6 text-5xl font-bold text-indigo-600">
                         {result.score}
-                        <span className="text-2xl text-gray-400"> / {result.totalMarks}</span>
+                        <span className="text-2xl text-gray-400"> / {assessment.total_marks}</span>
                     </p>
                     <p className="mt-2 text-sm text-gray-500">
                         {percent}% &middot; {result.attempted} of {questions.length} attempted
                     </p>
-                    <button
-                        onClick={() => navigate("/junior-dashboard")}
-                        className="mt-8 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
-                    >
-                        View dashboard
-                    </button>
                 </div>
             </div>
         );
@@ -215,18 +159,6 @@ const Assessment = () => {
                 </div>
 
                 {/* Navigation */}
-                {submitError && (
-                    <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
-                        <p role="alert" className="text-sm text-red-600">{submitError}</p>
-                        <button
-                            onClick={submit}
-                            disabled={submitting}
-                            className="text-sm font-semibold text-indigo-600 disabled:opacity-60"
-                        >
-                            Retry saving
-                        </button>
-                    </div>
-                )}
                 <div className="mt-6 flex items-center justify-between">
                     <button
                         onClick={() => setCurrent((c) => c - 1)}
@@ -238,10 +170,9 @@ const Assessment = () => {
                     {current === questions.length - 1 ? (
                         <button
                             onClick={handleSubmitClick}
-                            disabled={submitting}
-                            className="rounded-lg bg-green-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-green-700 disabled:cursor-not-allowed disabled:opacity-60"
+                            className="rounded-lg bg-green-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-green-700"
                         >
-                            {submitting ? "Saving..." : "Submit"}
+                            Submit
                         </button>
                     ) : (
                         <button
