@@ -1,199 +1,293 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
-import assessment from "./../junior-assessment/test1.json"; // save your JSON next to this file
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { apiRequest } from "../../services/api.js";
 
 const formatTime = (secs) => {
-    const m = String(Math.floor(secs / 60)).padStart(2, "0");
-    const s = String(secs % 60).padStart(2, "0");
-    return `${m}:${s}`;
+    const minutes = String(Math.floor(secs / 60)).padStart(2, "0");
+    const seconds = String(secs % 60).padStart(2, "0");
+    return `${minutes}:${seconds}`;
 };
 
 const Assessment = () => {
-    // Flatten sections into one list, keeping the section name on each question
-    const questions = useMemo(
-        () =>
-            assessment.sections.flatMap((section) =>
-                section.questions.map((q) => ({ ...q, section: section.section_name }))
-            ),
-        []
-    );
-
+    const { assessmentId } = useParams();
+    const [assessment, setAssessment] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [loadError, setLoadError] = useState("");
     const [started, setStarted] = useState(false);
     const [current, setCurrent] = useState(0);
-    const [answers, setAnswers] = useState({}); // { [questionId]: selectedOption }
-    const [timeLeft, setTimeLeft] = useState(assessment.duration_minutes * 60);
+    const [answers, setAnswers] = useState({});
+    const [timeLeft, setTimeLeft] = useState(0);
     const [result, setResult] = useState(null);
+    const [submitting, setSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState("");
+    const autoSubmitAttempted = useRef(false);
 
-    const submit = useCallback(() => {
-        const score = questions.reduce(
-            (total, q) => total + (answers[q.id] === q.answer ? q.marks : 0),
-            0
-        );
-        setResult({ score, attempted: Object.keys(answers).length });
-        // TODO: send to backend, e.g.
-        // fetch("http://localhost:5000/api/junior-candidates/assessment", { method: "POST", ... })
-    }, [answers, questions]);
-
-    // Countdown timer, auto-submits at zero
     useEffect(() => {
-        if (!started || result) return;
-        if (timeLeft <= 0) {
-            submit();
-            return;
+        let isActive = true;
+
+        const loadAssessment = async () => {
+            try {
+                const data = await apiRequest(
+                    `/api/junior-candidates/assessments/${encodeURIComponent(assessmentId)}`
+                );
+                if (isActive) {
+                    setAssessment(data.assessment);
+                    setTimeLeft(data.assessment.durationMinutes * 60);
+                }
+            } catch (requestError) {
+                if (isActive) setLoadError(requestError.message);
+            } finally {
+                if (isActive) setLoading(false);
+            }
+        };
+
+        loadAssessment();
+        return () => {
+            isActive = false;
+        };
+    }, [assessmentId]);
+
+    const questions = useMemo(() => assessment?.questions || [], [assessment]);
+
+    const submit = useCallback(async () => {
+        if (!assessment || submitting || result) return;
+
+        setSubmitting(true);
+        setSubmitError("");
+        try {
+            const data = await apiRequest(
+                `/api/junior-candidates/assessments/${encodeURIComponent(assessmentId)}/submit`,
+                {
+                    method: "POST",
+                    body: JSON.stringify({ answers }),
+                }
+            );
+            setResult(data.result);
+        } catch (requestError) {
+            setSubmitError(requestError.message);
+        } finally {
+            setSubmitting(false);
         }
-        const id = setTimeout(() => setTimeLeft((t) => t - 1), 1000);
-        return () => clearTimeout(id);
-    }, [started, result, timeLeft, submit]);
+    }, [answers, assessment, assessmentId, result, submitting]);
+
+    useEffect(() => {
+        if (!assessment || !started || result || submitting) return undefined;
+        if (timeLeft <= 0) {
+            if (!autoSubmitAttempted.current) {
+                autoSubmitAttempted.current = true;
+                submit();
+            }
+            return undefined;
+        }
+
+        const timer = setTimeout(() => setTimeLeft((remaining) => remaining - 1), 1000);
+        return () => clearTimeout(timer);
+    }, [assessment, result, started, submitting, submit, timeLeft]);
 
     const handleSubmitClick = () => {
         const unanswered = questions.length - Object.keys(answers).length;
-        const msg = unanswered
+        const message = unanswered
             ? `You have ${unanswered} unanswered question(s). Submit anyway?`
             : "Submit your assessment?";
-        if (window.confirm(msg)) submit();
+        if (window.confirm(message)) submit();
     };
 
-    const card = "w-full max-w-2xl rounded-2xl bg-white p-8 shadow-lg";
-    const wrapper = "flex min-h-screen items-center justify-center bg-gray-100 px-4 py-8";
+    const wrapper = "flex min-h-screen items-center justify-center bg-slate-50 px-4 py-8";
+    const card = "w-full max-w-2xl rounded-2xl bg-white p-6 shadow-lg sm:p-8";
 
-    // ---------- Start screen ----------
+    if (loading) {
+        return <main className={wrapper}>Loading assessment...</main>;
+    }
+
+    if (loadError || !assessment) {
+        return (
+            <main className={wrapper}>
+                <section className={card}>
+                    <p role="alert" className="text-red-700">{loadError || "Assessment not found."}</p>
+                    <Link to="/assessments" className="mt-5 inline-block font-semibold text-indigo-600 hover:text-indigo-800">
+                        Back to assessments
+                    </Link>
+                </section>
+            </main>
+        );
+    }
+
     if (!started) {
         return (
-            <div className={wrapper}>
-                <div className={card}>
-                    <h1 className="text-2xl font-bold text-gray-800">{assessment.assessment_title}</h1>
-                    <p className="mt-2 text-sm text-gray-500">{assessment.instructions}</p>
+            <main className={wrapper}>
+                <section className={card}>
+                    <Link to="/assessments" className="text-sm font-semibold text-indigo-600 hover:text-indigo-800">
+                        ← All assessments
+                    </Link>
+                    <h1 className="mt-4 text-2xl font-bold text-slate-900">{assessment.assessmentTitle}</h1>
+                    <p className="mt-2 text-sm text-slate-600">{assessment.instructions}</p>
                     <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-                        <div className="rounded-lg bg-indigo-50 p-3">
-                            <p className="text-xl font-bold text-indigo-600">{assessment.total_questions}</p>
-                            <p className="text-xs text-gray-500">Questions</p>
-                        </div>
-                        <div className="rounded-lg bg-indigo-50 p-3">
-                            <p className="text-xl font-bold text-indigo-600">{assessment.total_marks}</p>
-                            <p className="text-xs text-gray-500">Marks</p>
-                        </div>
-                        <div className="rounded-lg bg-indigo-50 p-3">
-                            <p className="text-xl font-bold text-indigo-600">{assessment.duration_minutes} min</p>
-                            <p className="text-xs text-gray-500">Duration</p>
-                        </div>
+                        {[
+                            ["Questions", assessment.totalQuestions],
+                            ["Marks", assessment.totalMarks],
+                            ["Minutes", assessment.durationMinutes],
+                        ].map(([label, value]) => (
+                            <div key={label} className="rounded-lg bg-indigo-50 p-3">
+                                <p className="text-xl font-bold text-indigo-600">{value}</p>
+                                <p className="text-xs text-slate-500">{label}</p>
+                            </div>
+                        ))}
                     </div>
                     <button
+                        type="button"
                         onClick={() => setStarted(true)}
                         className="mt-8 w-full rounded-lg bg-indigo-600 py-2.5 text-sm font-semibold text-white transition hover:bg-indigo-700"
                     >
-                        Start Test
+                        Start test
                     </button>
-                </div>
-            </div>
+                </section>
+            </main>
         );
     }
 
-    // ---------- Result screen ----------
     if (result) {
-        const percent = Math.round((result.score / assessment.total_marks) * 100);
+        const percent = result.totalMarks
+            ? Math.round((result.score / result.totalMarks) * 100)
+            : 0;
         return (
-            <div className={wrapper}>
-                <div className={`${card} text-center`}>
-                    <h1 className="text-2xl font-bold text-gray-800">Test Submitted</h1>
+            <main className={wrapper}>
+                <section className={`${card} text-center`}>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">Assessment complete</p>
+                    <h1 className="mt-2 text-2xl font-bold text-slate-900">{assessment.assessmentTitle}</h1>
                     <p className="mt-6 text-5xl font-bold text-indigo-600">
                         {result.score}
-                        <span className="text-2xl text-gray-400"> / {assessment.total_marks}</span>
+                        <span className="text-2xl text-slate-400"> / {result.totalMarks}</span>
                     </p>
-                    <p className="mt-2 text-sm text-gray-500">
-                        {percent}% &middot; {result.attempted} of {questions.length} attempted
+                    <p className="mt-2 text-sm text-slate-500">
+                        {percent}% · {result.attempted} of {result.questionCount} attempted
                     </p>
-                </div>
-            </div>
+                    <Link
+                        to="/dashboard"
+                        className="mt-8 inline-block rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700"
+                    >
+                        View dashboard
+                    </Link>
+                </section>
+            </main>
         );
     }
 
-    // ---------- Question screen ----------
-    const q = questions[current];
-    const lowTime = timeLeft <= 60;
+    const question = questions[current];
+    if (!question) {
+        return (
+            <main className={wrapper}>
+                <section className={card}>
+                    <p role="alert" className="text-red-700">This assessment has no questions.</p>
+                    <Link to="/dashboard" className="mt-5 inline-block font-semibold text-indigo-600">
+                        Back to dashboard
+                    </Link>
+                </section>
+            </main>
+        );
+    }
 
-    const optionClass = (opt) =>
-        `w-full rounded-lg border px-4 py-3 text-left text-sm transition ${answers[q.id] === opt
-            ? "border-indigo-500 bg-indigo-50 font-medium text-indigo-700"
-            : "border-gray-300 text-gray-700 hover:border-indigo-300 hover:bg-gray-50"
+    const optionClass = (option) =>
+        `w-full rounded-lg border px-4 py-3 text-left text-sm transition ${
+            answers[question.id] === option
+                ? "border-indigo-500 bg-indigo-50 font-medium text-indigo-700"
+                : "border-slate-300 text-slate-700 hover:border-indigo-300 hover:bg-slate-50"
         }`;
 
-    const navClass = (i) => {
+    const questionNavClass = (index) => {
         const base = "h-8 w-8 rounded text-xs font-medium transition";
-        if (i === current) return `${base} bg-indigo-600 text-white`;
-        if (answers[questions[i].id]) return `${base} bg-green-100 text-green-700`;
-        return `${base} bg-gray-100 text-gray-500 hover:bg-gray-200`;
+        if (index === current) return `${base} bg-indigo-600 text-white`;
+        if (answers[questions[index].id] !== undefined) return `${base} bg-green-100 text-green-700`;
+        return `${base} bg-slate-100 text-slate-500 hover:bg-slate-200`;
     };
 
     return (
-        <div className={wrapper}>
-            <div className={card}>
-                {/* Header */}
-                <div className="mb-6 flex items-center justify-between">
+        <main className={wrapper}>
+            <section className={card}>
+                <div className="mb-6 flex items-center justify-between gap-4">
                     <div>
                         <p className="text-xs font-semibold uppercase tracking-wide text-indigo-600">
-                            {q.section}
+                            {question.section}
                         </p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-slate-500">
                             Question {current + 1} of {questions.length}
                         </p>
                     </div>
-                    <div
-                        className={`rounded-lg px-3 py-1.5 text-sm font-semibold ${lowTime ? "bg-red-50 text-red-600" : "bg-gray-100 text-gray-700"
-                            }`}
-                    >
+                    <div className={`rounded-lg px-3 py-1.5 text-sm font-semibold ${
+                        timeLeft <= 60 ? "bg-red-50 text-red-600" : "bg-slate-100 text-slate-700"
+                    }`}>
                         {formatTime(timeLeft)}
                     </div>
                 </div>
 
-                {/* Question */}
-                <h2 className="mb-4 text-lg font-semibold text-gray-800">{q.question}</h2>
+                <h2 className="mb-4 text-lg font-semibold text-slate-900">{question.question}</h2>
                 <div className="space-y-3">
-                    {q.options.map((opt) => (
+                    {question.options.map((option) => (
                         <button
-                            key={opt}
-                            onClick={() => setAnswers((prev) => ({ ...prev, [q.id]: opt }))}
-                            className={optionClass(opt)}
+                            type="button"
+                            key={option}
+                            onClick={() => setAnswers((previous) => ({
+                                ...previous,
+                                [question.id]: option,
+                            }))}
+                            className={optionClass(option)}
                         >
-                            {opt}
+                            {option}
                         </button>
                     ))}
                 </div>
 
-                {/* Navigation */}
-                <div className="mt-6 flex items-center justify-between">
+                {submitError && (
+                    <p role="alert" className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+                        {submitError}
+                    </p>
+                )}
+
+                <div className="mt-6 flex items-center justify-between gap-3">
                     <button
-                        onClick={() => setCurrent((c) => c - 1)}
-                        disabled={current === 0}
-                        className="rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-40"
+                        type="button"
+                        onClick={() => setCurrent((index) => index - 1)}
+                        disabled={current === 0 || submitting}
+                        className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40"
                     >
                         Previous
                     </button>
                     {current === questions.length - 1 ? (
                         <button
-                            onClick={handleSubmitClick}
-                            className="rounded-lg bg-green-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-green-700"
+                            type="button"
+                            onClick={submitError ? submit : handleSubmitClick}
+                            disabled={submitting}
+                            className="rounded-lg bg-green-600 px-5 py-2 text-sm font-semibold text-white hover:bg-green-700 disabled:opacity-60"
                         >
-                            Submit
+                            {submitting ? "Submitting..." : submitError ? "Retry submission" : "Submit"}
                         </button>
                     ) : (
                         <button
-                            onClick={() => setCurrent((c) => c + 1)}
-                            className="rounded-lg bg-indigo-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700"
+                            type="button"
+                            onClick={() => setCurrent((index) => index + 1)}
+                            disabled={submitting}
+                            className="rounded-lg bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-60"
                         >
                             Next
                         </button>
                     )}
                 </div>
 
-                {/* Question navigator */}
-                <div className="mt-6 flex flex-wrap gap-2 border-t border-gray-100 pt-4">
-                    {questions.map((_, i) => (
-                        <button key={i} onClick={() => setCurrent(i)} className={navClass(i)}>
-                            {i + 1}
+                <div className="mt-6 flex flex-wrap gap-2 border-t border-slate-100 pt-4" aria-label="Question navigation">
+                    {questions.map((_, index) => (
+                        <button
+                            type="button"
+                            key={index}
+                            aria-label={`Go to question ${index + 1}`}
+                            aria-current={index === current ? "step" : undefined}
+                            onClick={() => setCurrent(index)}
+                            className={questionNavClass(index)}
+                        >
+                            {index + 1}
                         </button>
                     ))}
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
     );
 };
 

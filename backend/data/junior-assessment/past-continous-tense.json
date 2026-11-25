@@ -1,0 +1,260 @@
+{
+  "assessment_title": "Past Continuous Tense",
+  "total_questions": 20,
+  "total_marks": 20,
+  "duration_minutes": 20,
+  "instructions": "Choose the correct answer for each question. Each question carries 1 mark.",
+  "sections": [
+    {
+      "section_name": "Past Continuous Tense",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Which sentence is in Past Continuous Tense?",
+          "options": [
+            "She plays daily.",
+            "She is playing now.",
+            "She was playing at 5 pm yesterday.",
+            "She will play tomorrow."
+          ],
+          "answer": "She was playing at 5 pm yesterday.",
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "question": "Fill in the blank: \"I ___ my homework at 8 pm last night.\"",
+          "options": [
+            "Was doing",
+            "Do",
+            "Am doing",
+            "Did"
+          ],
+          "answer": "Was doing",
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "question": "Fill in the blank: \"He ___ football when it started raining.\"",
+          "options": [
+            "Play",
+            "Plays",
+            "Was playing",
+            "Is playing"
+          ],
+          "answer": "Was playing",
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "question": "Fill in the blank: \"They ___ in the park yesterday evening.\"",
+          "options": [
+            "Run",
+            "Are running",
+            "Runs",
+            "Were running"
+          ],
+          "answer": "Were running",
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "question": "Fill in the blank: \"She ___ a song at the party.\"",
+          "options": [
+            "Sing",
+            "Was singing",
+            "Sings",
+            "Sang"
+          ],
+          "answer": "Was singing",
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "question": "Choose the correct form for \"You\":",
+          "options": [
+            "You was reading",
+            "You were reading",
+            "You is reading",
+            "You am reading"
+          ],
+          "answer": "You were reading",
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "question": "Fill in the blank: \"The baby ___ when mother came.\"",
+          "options": [
+            "Cry",
+            "Cries",
+            "Was crying",
+            "Cried"
+          ],
+          "answer": "Was crying",
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "question": "Which is the Negative Sentence in Past Continuous?",
+          "options": [
+            "He does not sleep.",
+            "He was not sleeping.",
+            "He did not sleep.",
+            "He is not sleeping."
+          ],
+          "answer": "He was not sleeping.",
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "question": "Fill in the blank: \"We ___ not going to school at that time.\"",
+          "options": [
+            "Was",
+            "Is",
+            "Were",
+            "Are"
+          ],
+          "answer": "Were",
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "question": "Fill in the blank: \"___ you watching TV at 9 pm?\"",
+          "options": [
+            "Was",
+            "Were",
+            "Are",
+            "Is"
+          ],
+          "answer": "Were",
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "question": "Fill in the blank: \"___ she dancing when you called?\"",
+          "options": [
+            "Were",
+            "Was",
+            "Are",
+            "Is"
+          ],
+          "answer": "Was",
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "question": "Fill in the blank: \"At 7 pm, the dog ___ loudly.\"",
+          "options": [
+            "Was barking",
+            "Bark",
+            "Barks",
+            "Is barking"
+          ],
+          "answer": "Was barking",
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "question": "Which sentence shows an action going on in the past?",
+          "options": [
+            "I eat lunch daily.",
+            "I am eating lunch now.",
+            "I ate lunch.",
+            "I was eating lunch when the bell rang."
+          ],
+          "answer": "I was eating lunch when the bell rang.",
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "question": "Fill in the blank: \"It ___ when we left home.\"",
+          "options": [
+            "Rain",
+            "Rains",
+            "Was raining",
+            "Rained"
+          ],
+          "answer": "Was raining",
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "question": "Fill in the blank: \"My mother ___ food in the kitchen at noon.\"",
+          "options": [
+            "Cook",
+            "Cooks",
+            "Was cooking",
+            "Cooked"
+          ],
+          "answer": "Was cooking",
+          "marks": 1
+        },
+        {
+          "id": 16,
+          "question": "Choose the correct sentence:",
+          "options": [
+            "They was playing.",
+            "They were playing.",
+            "They is playing.",
+            "They plays."
+          ],
+          "answer": "They were playing.",
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "question": "Fill in the blank: \"I ___ for my exam all day yesterday.\"",
+          "options": [
+            "Study",
+            "Was studying",
+            "Studies",
+            "Studied"
+          ],
+          "answer": "Was studying",
+          "marks": 1
+        },
+        {
+          "id": 18,
+          "question": "Which is a Question in Past Continuous?",
+          "options": [
+            "What do you do?",
+            "What did you do?",
+            "What were you doing at 6 pm?",
+            "What will you do?"
+          ],
+          "answer": "What were you doing at 6 pm?",
+          "marks": 1
+        },
+        {
+          "id": 19,
+          "question": "Fill in the blank: \"The birds ___ in the sky at that time.\"",
+          "options": [
+            "Were flying",
+            "Fly",
+            "Flies",
+            "Is flying"
+          ],
+          "answer": "Were flying",
+          "marks": 1
+        },
+        {
+          "id": 20,
+          "question": "Which sentence is WRONG in Past Continuous?",
+          "options": [
+            "She was reading a book.",
+            "He was running fast.",
+            "I was writing.",
+            "They was watching TV."
+          ],
+          "answer": "They was watching TV.",
+          "marks": 1
+        }
+      ]
+    }
+  ],
+  "grading": {
+    "total_marks": 20,
+    "correct_answer_marks": 1,
+    "incorrect_answer_marks": 0,
+    "unanswered_marks": 0
+  }
+}

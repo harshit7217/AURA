@@ -1,0 +1,260 @@
+{
+  "assessment_title": "Simple Past Tense",
+  "total_questions": 20,
+  "total_marks": 20,
+  "duration_minutes": 20,
+  "instructions": "Choose the correct answer for each question. Each question carries 1 mark.",
+  "sections": [
+    {
+      "section_name": "Simple Past Tense",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Which sentence is in Simple Past Tense?",
+          "options": [
+            "She plays daily.",
+            "She is playing now.",
+            "She will play tomorrow.",
+            "She played yesterday."
+          ],
+          "answer": "She played yesterday.",
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "question": "Fill in the blank: \"I ___ to school yesterday.\"",
+          "options": [
+            "Go",
+            "Went",
+            "Goes",
+            "Going"
+          ],
+          "answer": "Went",
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "question": "Fill in the blank: \"They ___ football last Sunday.\"",
+          "options": [
+            "Play",
+            "Playing",
+            "Plays",
+            "Played"
+          ],
+          "answer": "Played",
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "question": "Fill in the blank: \"She ___ a beautiful song yesterday.\"",
+          "options": [
+            "Sings",
+            "Sing",
+            "Sang",
+            "Singing"
+          ],
+          "answer": "Sang",
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "question": "What is the past form of \"Eat\"?",
+          "options": [
+            "Eats",
+            "Eating",
+            "Ate",
+            "Eaten"
+          ],
+          "answer": "Ate",
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "question": "Fill in the blank: \"My mother ___ delicious food last night.\"",
+          "options": [
+            "Cook",
+            "Cooks",
+            "Cooking",
+            "Cooked"
+          ],
+          "answer": "Cooked",
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "question": "Choose the Negative Sentence in Simple Past:",
+          "options": [
+            "He does not like milk.",
+            "He is not liking milk.",
+            "He did not like milk.",
+            "He will not like milk."
+          ],
+          "answer": "He did not like milk.",
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "question": "Fill in the blank: \"She ___ not come to school yesterday.\"",
+          "options": [
+            "Do",
+            "Does",
+            "Did",
+            "Is"
+          ],
+          "answer": "Did",
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "question": "Fill in the blank: \"___ you watch the movie yesterday?\"",
+          "options": [
+            "Do",
+            "Does",
+            "Are",
+            "Did"
+          ],
+          "answer": "Did",
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "question": "Fill in the blank: \"The sun ___ brightly yesterday.\"",
+          "options": [
+            "Shines",
+            "Shone",
+            "Shining",
+            "Shine"
+          ],
+          "answer": "Shone",
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "question": "What is the past form of \"Buy\"?",
+          "options": [
+            "Buyed",
+            "Buying",
+            "Bought",
+            "Buys"
+          ],
+          "answer": "Bought",
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "question": "Fill in the blank: \"We ___ our homework last night.\"",
+          "options": [
+            "Did",
+            "Do",
+            "Does",
+            "Doing"
+          ],
+          "answer": "Did",
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "question": "Which sentence shows Simple Past?",
+          "options": [
+            "I brush my teeth daily.",
+            "I am brushing my teeth.",
+            "I will brush my teeth.",
+            "I brushed my teeth this morning."
+          ],
+          "answer": "I brushed my teeth this morning.",
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "question": "Fill in the blank: \"Birds ___ away when we came.\"",
+          "options": [
+            "Flew",
+            "Fly",
+            "Flies",
+            "Flying"
+          ],
+          "answer": "Flew",
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "question": "Choose the correct sentence:",
+          "options": [
+            "Ram and Shyam played together yesterday.",
+            "Ram and Shyam plays together yesterday.",
+            "Ram and Shyam playing together yesterday.",
+            "Ram and Shyam play together yesterday."
+          ],
+          "answer": "Ram and Shyam played together yesterday.",
+          "marks": 1
+        },
+        {
+          "id": 16,
+          "question": "Fill in the blank: \"It ___ heavily last night.\"",
+          "options": [
+            "Rain",
+            "Rains",
+            "Rained",
+            "Raining"
+          ],
+          "answer": "Rained",
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "question": "Which is a Question in Simple Past?",
+          "options": [
+            "Where do you live?",
+            "Where are you living?",
+            "Where did you live last year?",
+            "Where will you live?"
+          ],
+          "answer": "Where did you live last year?",
+          "marks": 1
+        },
+        {
+          "id": 18,
+          "question": "Fill in the blank: \"My dog ___ loudly last night.\"",
+          "options": [
+            "Bark",
+            "Barks",
+            "Barking",
+            "Barked"
+          ],
+          "answer": "Barked",
+          "marks": 1
+        },
+        {
+          "id": 19,
+          "question": "What is the past form of \"Write\"?",
+          "options": [
+            "Wrote",
+            "Writes",
+            "Writing",
+            "Writed"
+          ],
+          "answer": "Wrote",
+          "marks": 1
+        },
+        {
+          "id": 20,
+          "question": "Which sentence is WRONG in Simple Past?",
+          "options": [
+            "She wrote a letter.",
+            "He ate an apple.",
+            "They went to park.",
+            "I goed to school."
+          ],
+          "answer": "I goed to school.",
+          "marks": 1
+        }
+      ]
+    }
+  ],
+  "grading": {
+    "total_marks": 20,
+    "correct_answer_marks": 1,
+    "incorrect_answer_marks": 0,
+    "unanswered_marks": 0
+  }
+}

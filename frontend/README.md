@@ -28,7 +28,7 @@ Start the backend separately, then run:
 npm run dev
 ```
 
-The frontend connects directly to the backend using the shared `src/services/api.js` helper. Restart the Vite server after changing the environment variable.
+The frontend connects to the backend using the shared `src/services/api.js` helper. Restart the Vite server after changing the environment variable.
 
 ## Available scripts
 
@@ -41,6 +41,7 @@ The frontend connects directly to the backend using the shared `src/services/api
 
 ## Current implementation
 
-- The application renders the authentication page at `/`.
-- The Login and Register forms validate input and submit to the backend through the shared API helper.
-- The current UI shows success and error messages after submission, but it does not yet route a user into a protected dashboard.
+- The application renders the authentication page at `/`; registration creates an account and signs the candidate in.
+- The protected `/dashboard` page shows score history and average score.
+- The protected `/assessments` page lists all assessment JSON files served by the backend.
+- Selecting an assessment opens `/junior-assessment/:assessmentId`; submissions are scored and saved by the backend.

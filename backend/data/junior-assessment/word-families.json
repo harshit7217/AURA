@@ -1,0 +1,260 @@
+{
+  "assessment_title": "Word Families",
+  "total_questions": 20,
+  "total_marks": 20,
+  "duration_minutes": 20,
+  "instructions": "Choose the correct answer for each question. Each question carries 1 mark.",
+  "sections": [
+    {
+      "section_name": "Word Families",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Which word belongs to the CARE family?",
+          "options": [
+            "Careful",
+            "Kindly",
+            "Lovely",
+            "Teacher"
+          ],
+          "answer": "Careful",
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "question": "Which word belongs to the HAPPY family?",
+          "options": [
+            "Sadness",
+            "Happiness",
+            "Quickness",
+            "Powerless"
+          ],
+          "answer": "Happiness",
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "question": "What does \"Careless\" mean?",
+          "options": [
+            "Doing with attention",
+            "Being kind",
+            "Not doing with attention",
+            "Very beautiful"
+          ],
+          "answer": "Not doing with attention",
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "question": "Which is from the FRIEND family?",
+          "options": [
+            "Friendship",
+            "Honesty",
+            "Strength",
+            "Beautifully"
+          ],
+          "answer": "Friendship",
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "question": "Which word is from the LOVE family?",
+          "options": [
+            "Loving",
+            "Playing",
+            "Reading",
+            "Teaching"
+          ],
+          "answer": "Loving",
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "question": "What does \"Beautiful\" mean?",
+          "options": [
+            "Very strong",
+            "Very pretty",
+            "Very sad",
+            "Very quick"
+          ],
+          "answer": "Very pretty",
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "question": "Which word belongs to the STRONG family?",
+          "options": [
+            "Strength",
+            "Sadness",
+            "Patience",
+            "Wonder"
+          ],
+          "answer": "Strength",
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "question": "Who is a person from the TEACH family?",
+          "options": [
+            "Reader",
+            "Writer",
+            "Teacher",
+            "Player"
+          ],
+          "answer": "Teacher",
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "question": "Which word is from the READ family?",
+          "options": [
+            "Readable",
+            "Loveless",
+            "Unhappy",
+            "Dishonest"
+          ],
+          "answer": "Readable",
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "question": "Which word is from the WRITE family?",
+          "options": [
+            "Rewrite",
+            "Reread",
+            "Replay",
+            "Unkind"
+          ],
+          "answer": "Rewrite",
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "question": "Who is from the PLAY family?",
+          "options": [
+            "Teacher",
+            "Reader",
+            "Writer",
+            "Player"
+          ],
+          "answer": "Player",
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "question": "What does \"Happiness\" mean?",
+          "options": [
+            "State of being happy",
+            "State of being sad",
+            "Waiting calmly",
+            "Telling the truth"
+          ],
+          "answer": "State of being happy",
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "question": "Which word is from the SAD family?",
+          "options": [
+            "Happier",
+            "Saddest",
+            "Quicker",
+            "Slower"
+          ],
+          "answer": "Saddest",
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "question": "What does \"Quickly\" mean?",
+          "options": [
+            "In a slow way",
+            "In a kind way",
+            "In a quick way",
+            "In a sad way"
+          ],
+          "answer": "In a quick way",
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "question": "Which word is from the SLOW family?",
+          "options": [
+            "Slowly",
+            "Happily",
+            "Lovely",
+            "Carefully"
+          ],
+          "answer": "Slowly",
+          "marks": 1
+        },
+        {
+          "id": 16,
+          "question": "What does \"Honesty\" mean?",
+          "options": [
+            "Being strong",
+            "Always telling the truth",
+            "Being beautiful",
+            "Being dangerous"
+          ],
+          "answer": "Always telling the truth",
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "question": "Which word is from the PATIENT family?",
+          "options": [
+            "Impatient",
+            "Unhappy",
+            "Unfriendly",
+            "Powerless"
+          ],
+          "answer": "Impatient",
+          "marks": 1
+        },
+        {
+          "id": 18,
+          "question": "Which word is from the DANGER family?",
+          "options": [
+            "Wonderful",
+            "Powerful",
+            "Dangerous",
+            "Successful"
+          ],
+          "answer": "Dangerous",
+          "marks": 1
+        },
+        {
+          "id": 19,
+          "question": "What does \"Wonderful\" mean?",
+          "options": [
+            "Not safe",
+            "Very good, amazing",
+            "Having a lot of power",
+            "Getting success"
+          ],
+          "answer": "Very good, amazing",
+          "marks": 1
+        },
+        {
+          "id": 20,
+          "question": "Which word is from the SUCCESS family?",
+          "options": [
+            "Succeed",
+            "Endanger",
+            "Beautify",
+            "Wondering"
+          ],
+          "answer": "Succeed",
+          "marks": 1
+        }
+      ]
+    }
+  ],
+  "grading": {
+    "total_marks": 20,
+    "correct_answer_marks": 1,
+    "incorrect_answer_marks": 0,
+    "unanswered_marks": 0
+  }
+}

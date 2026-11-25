@@ -1,0 +1,260 @@
+{
+  "assessment_title": "Noun",
+  "total_questions": 20,
+  "total_marks": 20,
+  "duration_minutes": 20,
+  "instructions": "Choose the correct answer for each question. Each question carries 1 mark.",
+  "sections": [
+    {
+      "section_name": "Nouns",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Which word is a Common Noun?",
+          "options": [
+            "Delhi",
+            "City",
+            "Ram",
+            "Monday"
+          ],
+          "answer": "City",
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "question": "Which word is a Proper Noun?",
+          "options": [
+            "Dog",
+            "School",
+            "Taj Mahal",
+            "River"
+          ],
+          "answer": "Taj Mahal",
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "question": "Which is a Collective Noun?",
+          "options": [
+            "Team",
+            "Boy",
+            "Pen",
+            "Happy"
+          ],
+          "answer": "Team",
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "question": "Which is an Abstract Noun?",
+          "options": [
+            "Table",
+            "Honesty",
+            "Mango",
+            "Chair"
+          ],
+          "answer": "Honesty",
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "question": "What is the plural of \"Child\"?",
+          "options": [
+            "Childs",
+            "Children",
+            "Childes",
+            "Childrens"
+          ],
+          "answer": "Children",
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "question": "What is the plural of \"Box\"?",
+          "options": [
+            "Boxs",
+            "Boxes",
+            "Boxies",
+            "Boxen"
+          ],
+          "answer": "Boxes",
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "question": "Which noun is Uncountable?",
+          "options": [
+            "Apple",
+            "Water",
+            "Book",
+            "Ball"
+          ],
+          "answer": "Water",
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "question": "Which noun is Countable?",
+          "options": [
+            "Milk",
+            "Sugar",
+            "Chair",
+            "Rice"
+          ],
+          "answer": "Chair",
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "question": "What is the feminine gender of \"King\"?",
+          "options": [
+            "Quean",
+            "Queen",
+            "Princess",
+            "Lady"
+          ],
+          "answer": "Queen",
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "question": "What is the masculine gender of \"Sister\"?",
+          "options": [
+            "Brother",
+            "Father",
+            "Uncle",
+            "Son"
+          ],
+          "answer": "Brother",
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "question": "Identify the Noun in this sentence: \"The cat runs fast.\"",
+          "options": [
+            "Runs",
+            "Fast",
+            "Cat",
+            "The"
+          ],
+          "answer": "Cat",
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "question": "Which sentence has a Collective Noun?",
+          "options": [
+            "The flock of birds is flying.",
+            "Ram is a good boy.",
+            "She eats an apple.",
+            "I like red colour."
+          ],
+          "answer": "The flock of birds is flying.",
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "question": "Which word is NOT a noun?",
+          "options": [
+            "Happiness",
+            "Quickly",
+            "Teacher",
+            "Garden"
+          ],
+          "answer": "Quickly",
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "question": "What is the singular of \"Women\"?",
+          "options": [
+            "Womans",
+            "Woman",
+            "Womens",
+            "Womenes"
+          ],
+          "answer": "Woman",
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "question": "Which is a Material Noun?",
+          "options": [
+            "Gold",
+            "Bravery",
+            "Crowd",
+            "Delhi"
+          ],
+          "answer": "Gold",
+          "marks": 1
+        },
+        {
+          "id": 16,
+          "question": "Choose the correct noun: \"A ___ of keys is on the table.\"",
+          "options": [
+            "Bunch",
+            "Pack",
+            "Herd",
+            "Swarm"
+          ],
+          "answer": "Bunch",
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "question": "Which is a Common Gender Noun?",
+          "options": [
+            "King",
+            "Queen",
+            "Teacher",
+            "Mother"
+          ],
+          "answer": "Teacher",
+          "marks": 1
+        },
+        {
+          "id": 18,
+          "question": "What is the plural of \"Tooth\"?",
+          "options": [
+            "Tooths",
+            "Teeth",
+            "Toothies",
+            "Teeths"
+          ],
+          "answer": "Teeth",
+          "marks": 1
+        },
+        {
+          "id": 19,
+          "question": "Identify the Abstract Noun: \"His bravery saved everyone.\"",
+          "options": [
+            "His",
+            "Saved",
+            "Bravery",
+            "Everyone"
+          ],
+          "answer": "Bravery",
+          "marks": 1
+        },
+        {
+          "id": 20,
+          "question": "Which is a Proper Noun that needs a Capital Letter?",
+          "options": [
+            "dog",
+            "india",
+            "India",
+            "book"
+          ],
+          "answer": "India",
+          "marks": 1
+        }
+      ]
+    }
+  ],
+  "grading": {
+    "total_marks": 20,
+    "correct_answer_marks": 1,
+    "incorrect_answer_marks": 0,
+    "unanswered_marks": 0
+  }
+}

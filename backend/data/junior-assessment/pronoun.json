@@ -1,0 +1,260 @@
+{
+  "assessment_title": "Pronoun",
+  "total_questions": 20,
+  "total_marks": 20,
+  "duration_minutes": 20,
+  "instructions": "Choose the correct answer for each question. Each question carries 1 mark.",
+  "sections": [
+    {
+      "section_name": "Pronouns",
+      "questions": [
+        {
+          "id": 1,
+          "question": "What is a Pronoun?",
+          "options": [
+            "A word that shows action",
+            "A word used in place of a noun",
+            "A word that describes a noun",
+            "A word that joins sentences"
+          ],
+          "answer": "A word used in place of a noun",
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "question": "Choose the correct Personal Pronoun: \"___ is my best friend.\"",
+          "options": [
+            "He",
+            "His",
+            "Him",
+            "He’s"
+          ],
+          "answer": "He",
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "question": "Fill in the blank: \"This is Ram. ___ is a good boy.\"",
+          "options": [
+            "She",
+            "It",
+            "He",
+            "They"
+          ],
+          "answer": "He",
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "question": "Fill in the blank: \"This is Sita. ___ is my sister.\"",
+          "options": [
+            "He",
+            "She",
+            "It",
+            "They"
+          ],
+          "answer": "She",
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "question": "Which is a Possessive Pronoun?",
+          "options": [
+            "He",
+            "Mine",
+            "Him",
+            "They"
+          ],
+          "answer": "Mine",
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "question": "Choose the correct pronoun: \"The book is ___.\"",
+          "options": [
+            "My",
+            "Mine",
+            "Me",
+            "I"
+          ],
+          "answer": "Mine",
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "question": "Fill in the blank: \"The dog is hungry. Give ___ some food.\"",
+          "options": [
+            "It",
+            "He",
+            "She",
+            "They"
+          ],
+          "answer": "It",
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "question": "Which is a Reflexive Pronoun?",
+          "options": [
+            "Himself",
+            "His",
+            "He",
+            "Him"
+          ],
+          "answer": "Himself",
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "question": "Fill in the blank: \"I did my homework ___.\"",
+          "options": [
+            "Myself",
+            "Me",
+            "My",
+            "Mine"
+          ],
+          "answer": "Myself",
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "question": "Which is a Demonstrative Pronoun?",
+          "options": [
+            "This",
+            "He",
+            "Who",
+            "Mine"
+          ],
+          "answer": "This",
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "question": "Fill in the blank: \"___ are my favourite mangoes.\"",
+          "options": [
+            "This",
+            "These",
+            "That",
+            "It"
+          ],
+          "answer": "These",
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "question": "Which is an Interrogative Pronoun?",
+          "options": [
+            "Who",
+            "This",
+            "Myself",
+            "His"
+          ],
+          "answer": "Who",
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "question": "Fill in the blank: \"___ is knocking at the door?\"",
+          "options": [
+            "What",
+            "Who",
+            "This",
+            "That"
+          ],
+          "answer": "Who",
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "question": "Fill in the blank: \"They did it ___.\"",
+          "options": [
+            "Themselves",
+            "Their",
+            "Them",
+            "They"
+          ],
+          "answer": "Themselves",
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "question": "Choose the correct pronoun: \"Me and Ria are friends. ___ play together.\"",
+          "options": [
+            "She",
+            "We",
+            "They",
+            "He"
+          ],
+          "answer": "We",
+          "marks": 1
+        },
+        {
+          "id": 16,
+          "question": "Fill in the blank: \"This pen is ___, not yours.\"",
+          "options": [
+            "My",
+            "Mine",
+            "Me",
+            "I"
+          ],
+          "answer": "Mine",
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "question": "Which sentence uses a pronoun correctly?",
+          "options": [
+            "Him is my brother.",
+            "He is my brother.",
+            "His is my brother.",
+            "He’s is my brother."
+          ],
+          "answer": "He is my brother.",
+          "marks": 1
+        },
+        {
+          "id": 18,
+          "question": "Fill in the blank: \"Look at ___! She is dancing.\"",
+          "options": [
+            "She",
+            "Her",
+            "Hers",
+            "Herself"
+          ],
+          "answer": "Her",
+          "marks": 1
+        },
+        {
+          "id": 19,
+          "question": "Which is a Relative Pronoun?",
+          "options": [
+            "Which",
+            "This",
+            "Mine",
+            "Myself"
+          ],
+          "answer": "Which",
+          "marks": 1
+        },
+        {
+          "id": 20,
+          "question": "Fill in the blank: \"This is the boy ___ won the race.\"",
+          "options": [
+            "Who",
+            "What",
+            "This",
+            "That is"
+          ],
+          "answer": "Who",
+          "marks": 1
+        }
+      ]
+    }
+  ],
+  "grading": {
+    "total_marks": 20,
+    "correct_answer_marks": 1,
+    "incorrect_answer_marks": 0,
+    "unanswered_marks": 0
+  }
+}

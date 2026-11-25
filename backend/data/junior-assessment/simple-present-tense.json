@@ -1,0 +1,260 @@
+{
+  "assessment_title": "Simple Present Tense",
+  "total_questions": 20,
+  "total_marks": 20,
+  "duration_minutes": 20,
+  "instructions": "Choose the correct answer for each question. Each question carries 1 mark.",
+  "sections": [
+    {
+      "section_name": "Simple Present Tense",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Which sentence is in Simple Present Tense?",
+          "options": [
+            "She is playing.",
+            "She plays every day.",
+            "She played yesterday.",
+            "She will play tomorrow."
+          ],
+          "answer": "She plays every day.",
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "question": "Fill in the blank: \"He ___ to school daily.\"",
+          "options": [
+            "Go",
+            "Goes",
+            "Going",
+            "Went"
+          ],
+          "answer": "Goes",
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "question": "Fill in the blank: \"They ___ football on Sunday.\"",
+          "options": [
+            "Play",
+            "Plays",
+            "Playing",
+            "Played"
+          ],
+          "answer": "Play",
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "question": "Fill in the blank: \"She ___ very well.\"",
+          "options": [
+            "Sing",
+            "Sings",
+            "Sang",
+            "Singing"
+          ],
+          "answer": "Sings",
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "question": "Which is the correct Simple Present form for \"I\"?",
+          "options": [
+            "I plays",
+            "I play",
+            "I playing",
+            "I played"
+          ],
+          "answer": "I play",
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "question": "Fill in the blank: \"The sun ___ in the east.\"",
+          "options": [
+            "Rise",
+            "Rises",
+            "Rising",
+            "Rose"
+          ],
+          "answer": "Rises",
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "question": "Fill in the blank: \"My mother ___ delicious food.\"",
+          "options": [
+            "Cook",
+            "Cooks",
+            "Cooking",
+            "Cooked"
+          ],
+          "answer": "Cooks",
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "question": "Choose the Negative Sentence in Simple Present:",
+          "options": [
+            "He does not like milk.",
+            "He is not liking milk.",
+            "He did not like milk.",
+            "He will not like milk."
+          ],
+          "answer": "He does not like milk.",
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "question": "Fill in the blank: \"She ___ not watch TV at night.\"",
+          "options": [
+            "Do",
+            "Does",
+            "Did",
+            "Is"
+          ],
+          "answer": "Does",
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "question": "Fill in the blank: \"___ you like mangoes?\"",
+          "options": [
+            "Do",
+            "Does",
+            "Did",
+            "Are"
+          ],
+          "answer": "Do",
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "question": "Fill in the blank: \"___ she go to school?\"",
+          "options": [
+            "Do",
+            "Does",
+            "Did",
+            "Is"
+          ],
+          "answer": "Does",
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "question": "Which sentence shows a Habit in Simple Present?",
+          "options": [
+            "I am brushing my teeth.",
+            "I brush my teeth twice a day.",
+            "I brushed my teeth.",
+            "I will brush my teeth."
+          ],
+          "answer": "I brush my teeth twice a day.",
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "question": "Fill in the blank: \"Water ___ at 100°C.\"",
+          "options": [
+            "Boil",
+            "Boils",
+            "Boiling",
+            "Boiled"
+          ],
+          "answer": "Boils",
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "question": "Fill in the blank: \"Birds ___ in the sky.\"",
+          "options": [
+            "Fly",
+            "Flies",
+            "Flying",
+            "Flew"
+          ],
+          "answer": "Fly",
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "question": "Choose the correct sentence:",
+          "options": [
+            "Ram and Shyam plays together.",
+            "Ram and Shyam play together.",
+            "Ram and Shyam playing together.",
+            "Ram and Shyam played together."
+          ],
+          "answer": "Ram and Shyam play together.",
+          "marks": 1
+        },
+        {
+          "id": 16,
+          "question": "Fill in the blank: \"It ___ a lot in July.\"",
+          "options": [
+            "Rain",
+            "Rains",
+            "Raining",
+            "Rained"
+          ],
+          "answer": "Rains",
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "question": "Which is a Question in Simple Present?",
+          "options": [
+            "Where do you live?",
+            "Where are you living?",
+            "Where did you live?",
+            "Where will you live?"
+          ],
+          "answer": "Where do you live?",
+          "marks": 1
+        },
+        {
+          "id": 18,
+          "question": "Fill in the blank: \"My dog ___ loudly.\"",
+          "options": [
+            "Bark",
+            "Barks",
+            "Barking",
+            "Barked"
+          ],
+          "answer": "Barks",
+          "marks": 1
+        },
+        {
+          "id": 19,
+          "question": "Fill in the blank: \"We ___ our homework on time.\"",
+          "options": [
+            "Do",
+            "Does",
+            "Doing",
+            "Did"
+          ],
+          "answer": "Do",
+          "marks": 1
+        },
+        {
+          "id": 20,
+          "question": "Which sentence is WRONG in Simple Present?",
+          "options": [
+            "She writes a letter.",
+            "He eats an apple.",
+            "They goes to park.",
+            "I read a book."
+          ],
+          "answer": "They goes to park.",
+          "marks": 1
+        }
+      ]
+    }
+  ],
+  "grading": {
+    "total_marks": 20,
+    "correct_answer_marks": 1,
+    "incorrect_answer_marks": 0,
+    "unanswered_marks": 0
+  }
+}

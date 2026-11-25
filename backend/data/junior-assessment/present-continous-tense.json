@@ -1,0 +1,260 @@
+{
+  "assessment_title": "Present Continous Tense",
+  "total_questions": 20,
+  "total_marks": 20,
+  "duration_minutes": 20,
+  "instructions": "Choose the correct answer for each question. Each question carries 1 mark.",
+  "sections": [
+    {
+      "section_name": "Present Continuous Tense",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Which sentence is in Present Continuous Tense?",
+          "options": [
+            "She plays daily.",
+            "She is playing now.",
+            "She played yesterday.",
+            "She will play tomorrow."
+          ],
+          "answer": "She is playing now.",
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "question": "Fill in the blank: \"I ___ my homework now.\"",
+          "options": [
+            "Do",
+            "Am doing",
+            "Did",
+            "Does"
+          ],
+          "answer": "Am doing",
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "question": "Fill in the blank: \"He ___ football right now.\"",
+          "options": [
+            "Is playing",
+            "Play",
+            "Plays",
+            "Played"
+          ],
+          "answer": "Is playing",
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "question": "Fill in the blank: \"They ___ in the park.\"",
+          "options": [
+            "Is running",
+            "Are running",
+            "Run",
+            "Runs"
+          ],
+          "answer": "Are running",
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "question": "Fill in the blank: \"She ___ a song.\"",
+          "options": [
+            "Is singing",
+            "Sing",
+            "Sings",
+            "Sang"
+          ],
+          "answer": "Is singing",
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "question": "Choose the correct form for \"You\":",
+          "options": [
+            "You is reading",
+            "You are reading",
+            "You am reading",
+            "You reads"
+          ],
+          "answer": "You are reading",
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "question": "Fill in the blank: \"The baby ___.\"",
+          "options": [
+            "Is crying",
+            "Cry",
+            "Cries",
+            "Cried"
+          ],
+          "answer": "Is crying",
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "question": "Which is the Negative Sentence in Present Continuous?",
+          "options": [
+            "He is not sleeping.",
+            "He does not sleep.",
+            "He did not sleep.",
+            "He will not sleep."
+          ],
+          "answer": "He is not sleeping.",
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "question": "Fill in the blank: \"We ___ not going to school today.\"",
+          "options": [
+            "Is",
+            "Am",
+            "Are",
+            "Do"
+          ],
+          "answer": "Are",
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "question": "Fill in the blank: \"___ you watching TV?\"",
+          "options": [
+            "Is",
+            "Am",
+            "Are",
+            "Do"
+          ],
+          "answer": "Are",
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "question": "Fill in the blank: \"___ she dancing?\"",
+          "options": [
+            "Is",
+            "Are",
+            "Am",
+            "Do"
+          ],
+          "answer": "Is",
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "question": "Fill in the blank: \"Look! The dog ___.\"",
+          "options": [
+            "Is barking",
+            "Bark",
+            "Barks",
+            "Barked"
+          ],
+          "answer": "Is barking",
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "question": "Which sentence shows an action happening NOW?",
+          "options": [
+            "I eat lunch at 1 pm daily.",
+            "I am eating lunch now.",
+            "I ate lunch.",
+            "I will eat lunch."
+          ],
+          "answer": "I am eating lunch now.",
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "question": "Fill in the blank: \"It ___ outside.\"",
+          "options": [
+            "Is raining",
+            "Rain",
+            "Rains",
+            "Rained"
+          ],
+          "answer": "Is raining",
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "question": "Fill in the blank: \"My mother ___ food in the kitchen.\"",
+          "options": [
+            "Is cooking",
+            "Cook",
+            "Cooks",
+            "Cooked"
+          ],
+          "answer": "Is cooking",
+          "marks": 1
+        },
+        {
+          "id": 16,
+          "question": "Choose the correct sentence:",
+          "options": [
+            "They is playing.",
+            "They are playing.",
+            "They am playing.",
+            "They plays."
+          ],
+          "answer": "They are playing.",
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "question": "Fill in the blank: \"I ___ for my exam these days.\"",
+          "options": [
+            "Am studying",
+            "Study",
+            "Studies",
+            "Studied"
+          ],
+          "answer": "Am studying",
+          "marks": 1
+        },
+        {
+          "id": 18,
+          "question": "Which is a Question in Present Continuous?",
+          "options": [
+            "What are you doing?",
+            "What do you do?",
+            "What did you do?",
+            "What will you do?"
+          ],
+          "answer": "What are you doing?",
+          "marks": 1
+        },
+        {
+          "id": 19,
+          "question": "Fill in the blank: \"The birds ___ in the sky.\"",
+          "options": [
+            "Is flying",
+            "Are flying",
+            "Fly",
+            "Flies"
+          ],
+          "answer": "Are flying",
+          "marks": 1
+        },
+        {
+          "id": 20,
+          "question": "Which sentence is WRONG in Present Continuous?",
+          "options": [
+            "She is reading a book.",
+            "He is running fast.",
+            "They is watching TV.",
+            "I am writing."
+          ],
+          "answer": "They is watching TV.",
+          "marks": 1
+        }
+      ]
+    }
+  ],
+  "grading": {
+    "total_marks": 20,
+    "correct_answer_marks": 1,
+    "incorrect_answer_marks": 0,
+    "unanswered_marks": 0
+  }
+}

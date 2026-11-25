@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { apiRequest } from "../../services/api.js";
 
 const initialForm = { name: "", email: "", password: "" };
@@ -15,7 +16,8 @@ const validate = ({ name, email, password }) => {
     return errors;
 }
 
-const Register = ({ setIsRegisterPage }) => {
+const Register = () => {
+    const navigate = useNavigate();
     const [form, setForm] = useState(initialForm);
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
@@ -49,9 +51,9 @@ const Register = ({ setIsRegisterPage }) => {
                 })
             });
 
-            setStatus({ type: "success", message: data.message || "Your registration request has been sent for approval." });
-
+            localStorage.setItem("token", data.token);
             setForm(initialForm);
+            navigate("/dashboard");
         } catch (err) {
             setStatus({ type: "error", message: err.message });
         } finally {
@@ -70,7 +72,7 @@ const Register = ({ setIsRegisterPage }) => {
             <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
                 <h1 className="text-2xl font-bold text-gray-800">Candidate Registration</h1>
                 <p className="mt-1 mb-6 text-sm text-gray-500">
-                    Create your account to get started.
+                    Create your account and start exploring assessments.
                 </p>
 
                 {status && (
@@ -154,10 +156,7 @@ const Register = ({ setIsRegisterPage }) => {
                     </button>
                 </form>
                 <p className="mt-6 text-center text-sm text-gray-500">
-                    Already have an account?{" "}
-                    <button className="font-medium text-indigo-600 hover:text-indigo-800 cursor-pointer" onClick={() => setIsRegisterPage(false)}>
-                        Login
-                    </button>
+                    Your account is ready immediately after registration.
                 </p>
             </div>
         </div>

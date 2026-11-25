@@ -40,7 +40,7 @@ const AuthPage = () => {
           </button>
         </div>
 
-        {isRegisterPage ? <Register setIsRegisterPage={setIsRegisterPage} /> : <Login setIsRegisterPage={setIsRegisterPage} />}
+        {isRegisterPage ? <Register /> : <Login setIsRegisterPage={setIsRegisterPage} />}
       </div>
     </div>
   )
