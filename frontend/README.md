@@ -1,47 +1,60 @@
 # AURA Frontend
 
-The frontend is a React single-page application built with Vite. Its current entry page provides a Login/Register toggle, uses React Router, and is styled with Tailwind CSS.
+The frontend is a React single-page application built with Vite. It provides candidate authentication, an assessment catalog, assessment-taking pages, and a score dashboard using React Router and Tailwind CSS.
 
 ## Requirements
 
-- Node.js and npm
+- Node.js 18 or newer
+- npm
+- The AURA backend running locally or an accessible backend URL
 
 ## Setup
 
-From this directory, install dependencies:
+From `frontend/`, install dependencies:
 
 ```powershell
 npm install
 ```
 
-## Development
-
-Set the backend URL in `.env.local` in the frontend directory (optional; defaults to `http://localhost:5000`):
+Set the backend URL in `.env.local` (optional; the default is `http://localhost:5000`):
 
 ```env
 VITE_API_BASE_URL=http://localhost:5000
 ```
 
-Start the backend separately, then run:
+Start the backend separately, then start the frontend:
 
 ```powershell
 npm run dev
 ```
 
-The frontend connects to the backend using the shared `src/services/api.js` helper. Restart the Vite server after changing the environment variable.
+Vite prints the local URL, normally `http://localhost:5173`. Restart Vite after changing `VITE_API_BASE_URL`.
 
 ## Available scripts
 
 | Command | Description |
 | --- | --- |
-| `npm run dev` | Start the Vite development server with hot module replacement. |
+| `npm run dev` | Start the Vite development server. |
 | `npm run build` | Create a production build in `dist`. |
 | `npm run preview` | Preview the production build locally. |
 | `npm run lint` | Run ESLint. |
 
-## Current implementation
+## Application pages
 
-- The application renders the authentication page at `/`; registration creates an account and signs the candidate in.
-- The protected `/dashboard` page shows score history and average score.
-- The protected `/assessments` page lists all assessment JSON files served by the backend.
-- Selecting an assessment opens `/junior-assessment/:assessmentId`; submissions are scored and saved by the backend.
+| Path | Access | Description |
+| --- | --- | --- |
+| `/` | Public | Register or log in. |
+| `/dashboard` | Protected | View average score and assessment history. |
+| `/assessments` | Protected | Browse assessments from the backend. |
+| `/junior-assessment/:assessmentId` | Protected | Answer an assessment and submit it for scoring. |
+
+Protected pages redirect to `/` when no JWT is present in `localStorage`. The shared [`api.js`](./src/services/api.js) helper adds the JWT to API requests automatically.
+
+## Frontend structure
+
+- `src/App.jsx` - Route definitions and authentication guard.
+- `src/components/Entering/` - Login and registration screens.
+- `src/components/Assessments/` - Assessment catalog.
+- `src/components/mcqs/` - Assessment questions and submission UI.
+- `src/components/Dashboard/` - Candidate dashboard and result history.
+- `src/services/api.js` - API base URL and authenticated fetch helper.
